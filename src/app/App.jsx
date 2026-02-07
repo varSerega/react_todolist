@@ -1,0 +1,23 @@
+import Router from "./routing";
+import TaskPage from "@/pages/TaskPage";
+import TasksPage from "@/pages/TasksPage";
+import './styles'
+
+
+const App = () => {
+
+  const routes = {
+      '/': TasksPage,
+      '/tasks/:id' :TaskPage,
+      '*' : () => <div> Page not found</div>
+  }
+
+  return (
+      <>
+          <Router routes={routes} />
+      </>
+
+  )
+}
+
+export default App
