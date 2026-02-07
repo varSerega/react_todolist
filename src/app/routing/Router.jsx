@@ -1,9 +1,12 @@
 import { useState, useEffect } from 'react'
 import { BASE_URL } from '@/shared/constants'
 
-const getCurrentPath = ()=>{
+const getCurrentPath = () => {
     const pathname = window.location.pathname
-    return pathname.startsWith(BASE_URL) ? pathname.slice(BASE_URL.length) ||'/': pathname
+
+    return pathname.startsWith(BASE_URL)
+        ? pathname.slice(BASE_URL.length - 1) || '/'
+        : pathname
 }
 
 const matchPath = (path, route) => {
